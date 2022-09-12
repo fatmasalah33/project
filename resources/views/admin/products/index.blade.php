@@ -1,4 +1,38 @@
 @extends('admin.layout')
+@section('styles')
+<style>
+  .price{
+    color: #0d0d0d;
+    font-size: 14px;
+    font-weight: 600;
+}
+.title{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 7px;
+}
+.title a{
+    display: block;
+    /* max-height:1rem; */
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #282828;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    font-weight: normal !important;
+    font-size: 16px !important;
+    cursor: pointer;
+   
+}
+.title a:hover{ color: black; }
+
+</style>
+@endsection
 @section('main')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -30,9 +64,10 @@
    <div class="card" style="width: 16rem;">
  <img src="{{asset("storage/uploads/products/$product->img")}}" style=""  class="card-img-top" alt="...">
  <div class="card-body">
-   <h5 class="card-title">{{$product->name}}</h5>
-   <p class="card-text">
-   price: {{$product->price}}</p>
+   <h5 class=" title">
+   <a > {{$product->name}} </a></h5>
+   <p class="card-text price">
+   EGP {{$product->price}}</p>
    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
  </div>
 </div></div>

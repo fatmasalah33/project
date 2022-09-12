@@ -1,4 +1,24 @@
 @extends('admin.layout')
+@section('styles')
+<style>
+.card-block{
+    overflow: hidden;
+}
+.card li{
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.card li a{
+    color: #282828 !important;
+    font-weight: 400;
+    font-size: 14px;
+}
+.card li a:hover{
+    color:blue !important;
+}
+</style>
+@endsection
 @section('main')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -24,10 +44,20 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <div>
+        <div class=" col-12 col-lg-3 d-none d-lg-block">
+        <ul class="card p-2 ">
     @foreach($cats as $cat)
-    <a href="{{  url("dashboard/product/index/$cat->id")}}" class="btn btn-info">{{$cat->name}}</a>
+    
+          <li class="mb-1" >
+            <i class="fas fa-solid fa-store"></i> 
+            <a href="{{  url("dashboard/product/index/$cat->id")}}" >{{$cat->name}}</a></li>
+
+      
     @endforeach
+    </ul>
+      </div>
+        <div>
+ 
 </div>
         </div>
         <!-- /.row -->

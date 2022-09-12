@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
      
     </ul>
    <div class="ml-auto">
-   <a  href="logout">log out</a>
+   <a  href="http://127.0.0.1:8000/logout">log out</a>
    </div>
   </nav>
   <!-- /.navbar -->

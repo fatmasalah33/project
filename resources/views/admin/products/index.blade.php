@@ -60,8 +60,8 @@
         
         <div class="row">
         @foreach($products as $product)
-        <div class="col-lg-3 col-sm-6">
-   <div class="card" style="width: 16rem;">
+        <div class="col-xlg-3 col-lg-4 col-md-4 col-sm-6">
+   <div class="card" style="width: 18rem;">
  <img src="{{asset("storage/uploads/products/$product->img")}}" style=""  class="card-img-top" alt="...">
  <div class="card-body">
    <h5 class=" title">

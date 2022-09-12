@@ -46,6 +46,11 @@
 <div class="card">
 <div class="card-body login-card-body">
 <p class="login-box-msg">Sign in to start your session</p>
+@foreach($errors->all() as $error)
+<div class="alert alert-danger">
+{{$error}}
+</div>
+@endforeach
 <form method="POST" action="{{ route('loginuser') }}">
 @if(Session::has('fail'))
 <div class="alert alert-danger">{{Session::get('fail')}}</div>

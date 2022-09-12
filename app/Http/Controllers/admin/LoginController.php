@@ -12,6 +12,11 @@ class LoginController extends Controller
         return view('admin.login');
     }
     public function loginuser(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'password'=>'required',
+          
+        ]);
         if($request->name =='fatma' && $request->password =='123'){
             $request->session()->put('loginIn',$request->name);
             return redirect('dashboard');

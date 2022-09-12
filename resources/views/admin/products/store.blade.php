@@ -28,6 +28,11 @@
     <div class="card card-format d-flex flex-row row">
       <div class="card-body col-6 m-auto">
         <h2 class="title"></h2>
+        @foreach($errors->all() as $error)
+<div class="alert alert-danger">
+{{$error}}
+</div>
+@endforeach
         <form method="POST" action="{{url('dashboard/product/store')}}"  enctype="multipart/form-data" >
          @csrf
         <div class="input-group d-flex flex-column">

@@ -25,6 +25,11 @@ class ProductController extends Controller
         return view('admin.products.store')->with($data);
     }
     public function store(Request $request){
+        $request->validate([
+            'name'=>'required|string|max:200',
+            'price'=>'required|numeric',
+            'img'=>'required|image|max:2048',
+        ]);
         if($request->hasFile('img')){
             $destination_Path='public\uploads\products';
             $image=$request->file('img');

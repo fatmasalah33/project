@@ -44,7 +44,7 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <a href="{{  url("dashboard/product/cat")}}" >add product</a>
+        <a class="btn btn-info" href="{{  url("dashboard/product/cat")}}" >add product</a>
         <!-- <div class=" col-12 col-lg-3 d-none d-lg-block">
         <ul class="card p-2 ">
     @foreach($cats as $cat)

@@ -13,14 +13,16 @@ class ProductController extends Controller
         return view('admin.products.cats')->with($data);
     }
     public function index($cat){
-        $data['products']=Product::where('cat_id','=',$cat)->get();
+        $data['productsOversize']=Product::where('cat_id','=',$cat)->where('section','=','oversize')->get();
+        $data['productsFormal']=Product::where('cat_id','=',$cat)->where('section','=','Formal')->get();
+        // dd($data);
         $data['cat']=Cat::where('id','=',$cat)->get();
         return view('admin.products.index')->with($data);
 
     }
-    public function cat($cat){
+    public function cat(){
        
-        $data['cat']=Cat::where('id','=',$cat)->get();
+        $data['cat']=Cat::get();
         // dd(Cat::where('id','=',$cat)->get());
         return view('admin.products.store')->with($data);
     }
@@ -42,9 +44,10 @@ class ProductController extends Controller
             'price'=>$request->price,
             'img'=>$image_name,
             'cat_id' =>$request->cat_id,
+            'section'=>$request->section
         ]);
         // dd($request->all());
 
-       return redirect("dashboard/product/index/$request->cat_id");
+       return redirect("product/index/$request->cat_id");
     }
 }

@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Product / {{$cat[0]->name}}</h1>
+            <h1 class="m-0 text-dark">Add Product </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -41,7 +41,27 @@
 
          
           </div>
-          <input type="hidden" name="cat_id" value="{{$cat[0]->id}}">
+          <div class="input-group d-flex flex-column">
+            <label>Select a category</label>
+          <select class='form-control mb-1 mt-3 w-100' name="cat_id" >
+          @foreach($cat as $item)
+              <option  value="{{$item->id}}">{{$item->name}}
+              </option>
+              @endforeach
+            </select>
+            </div>
+            <div class="input-group d-flex flex-column">
+            <label>Select a section</label>
+          <select class='form-control mb-1 mt-3 w-100' name=" section" >
+        
+              <option  value="oversize">oversize
+              </option>
+              <option  value="formal">formal
+              </option>
+             
+            </select>
+            </div>
+           
           <div class="input-group d-flex flex-column">
             <input class="form-control mb-1 mt-3 w-100" type="text" placeholder="Price"
              name="price">

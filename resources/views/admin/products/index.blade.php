@@ -1,6 +1,12 @@
-@extends('admin.layout')
-@section('styles')
-<style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    .bg-pink{
+    background-color: #f2acbe !important;
+}
   .price{
     color: #0d0d0d;
     font-size: 14px;
@@ -32,35 +38,46 @@
 .title a:hover{ color: black; }
 
 </style>
-@endsection
-@section('main')
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">products / {{$cat[0]->name}}</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('dashboard')}}" >Home</a></li>
-              <li class="breadcrumb-item active">products </li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+</head>
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
+  <body>
+  <div class="container">
+  <h1 class="m-0 text-dark"> {{$cat[0]->name}}</h1>   
+        <div class="row" >
+               
+        <div class="bg-pink rounded-top p-3 pb-0">
         
-        <div class="row">
-        @foreach($products as $product)
-        <div class="col-xlg-3 col-lg-4 col-md-4 col-sm-6">
+        <h4>Oversize</h4>
+      </div>
+        @foreach($productsOversize as $product)
+ 
+        <div class="col-xlg-3 col-lg-4 col-md-4 col-sm-6 p-2">
+   <div class="card" style="width: 18rem;">
+ <img src="{{asset("storage/uploads/products/$product->img")}}" style="width:280px; height:280px;"  class="card-img-top" alt="...">
+ <div class="card-body">
+   <h5 class=" title">
+   <a > {{$product->name}} </a></h5>
+   <p class="card-text price">
+   EGP {{$product->price}}</p>
+   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+ </div>
+</div></div>
+   @endforeach
+        <div>
+
+</div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row" class="card-block">
+        <div class="bg-pink rounded-top p-3 pb-0">
+        
+        <h4>Formal</h4>
+      </div>
+        @foreach($productsFormal as $product)
+    
+       
+        <div class="col-xlg-3 col-lg-4 col-md-4 col-sm-6 p-2">
    <div class="card" style="width: 18rem;">
  <img src="{{asset("storage/uploads/products/$product->img")}}" style=""  class="card-img-top" alt="...">
  <div class="card-body">
@@ -77,10 +94,8 @@
 </div>
         </div>
         <!-- /.row -->
+       
       </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-@endsection
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

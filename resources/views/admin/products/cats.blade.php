@@ -50,7 +50,7 @@
     
           <li class="mb-1" >
             <i class="fas fa-solid fa-store"></i> 
-            <a href="{{  url("dashboard/product/index/$cat->id")}}" >{{$cat->name}}</a></li>
+            <a href="{{  url("product/index/$cat->id")}}" >{{$cat->name}}</a></li>
 
       
     @endforeach

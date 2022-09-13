@@ -28,3 +28,4 @@ Route::prefix('/dashboard')->middleware('IsLoggedIn')->group(function (){
     Route::post('/product/store',[ProductController::class,'store']);
 });
 Route::get('product/index/{cat}',[ProductController::class,'index']);
+Route::get('product/delete/{id}',[ProductController::class,'delete']);

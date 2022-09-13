@@ -50,4 +50,9 @@ class ProductController extends Controller
 
        return redirect("product/index/$request->cat_id");
     }
+    public function delete($id){
+        Product::find($id)->delete();
+        return back();
+
+    }
 }

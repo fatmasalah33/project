@@ -12,6 +12,14 @@ class ProductController extends Controller
         $data['cats']=Cat::get();
         return view('admin.products.cats')->with($data);
     }
+    public function indexadmin($cat){
+        $data['productsOversize']=Product::where('cat_id','=',$cat)->where('section','=','oversize')->get();
+        $data['productsFormal']=Product::where('cat_id','=',$cat)->where('section','=','Formal')->get();
+        // dd($data);
+        $data['cat']=Cat::where('id','=',$cat)->get();
+        return view('admin.products.indexadmin')->with($data);
+
+    }
     public function index($cat){
         $data['productsOversize']=Product::where('cat_id','=',$cat)->where('section','=','oversize')->get();
         $data['productsFormal']=Product::where('cat_id','=',$cat)->where('section','=','Formal')->get();
@@ -48,7 +56,7 @@ class ProductController extends Controller
         ]);
         // dd($request->all());
 
-       return redirect("product/index/$request->cat_id");
+       return redirect("dashboard/product/index/$request->cat_id");
     }
     public function delete($id){
         Product::find($id)->delete();

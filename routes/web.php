@@ -24,7 +24,7 @@ Route::prefix('/dashboard')->middleware('IsLoggedIn')->group(function (){
     Route::get('/categories', [CatController::class,'index']);
     Route::get('/product/cat',[ProductController::class,'cat']);
     Route::get('/product/categories',[ProductController::class,'categories']);
-   
+    Route::get('product/index/{cat}',[ProductController::class,'indexadmin']);
     Route::post('/product/store',[ProductController::class,'store']);
 });
 Route::get('product/index/{cat}',[ProductController::class,'index']);

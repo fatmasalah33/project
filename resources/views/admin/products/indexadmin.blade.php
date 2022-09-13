@@ -72,7 +72,9 @@
                             EGP {{$product->price}}
 
                         </span>
-                      
+                        <a href="{{url("product/delete/$product->id")}}" class="float-end">
+                            <i class=' fas fa-solid fa-trash text-danger'></i>
+                        </a>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -104,7 +106,9 @@
                             EGP {{$product->price}}
 
                         </span>
-                   
+                        <a href="{{url("product/delete/$product->id")}}" class="float-end">
+                            <i class=' fas fa-solid fa-trash text-danger'></i>
+                        </a>
 
                     </div>
 
